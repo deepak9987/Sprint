@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <!-- JDBC connection -->
+    <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/userdb?useSSL=false&amp;serverTimezone=UTC</property>
+    <property name="connection.username">root</property>
+    <property name="connection.password">admin</property>
+
+    <!-- SQL dialect -->
+    <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+    <!-- Show SQL -->
+    <property name="show_sql">false</property>
+    <property name="format_sql">false</property>
+
+    <!-- update schema (creates columns if missing). Use 'validate' in production -->
+    <property name="hibernate.hbm2ddl.auto">update</property>
+
+
+    <!-- Mapping classes -->
+    <mapping class="com.usermanagement.entity.Admin"/>
+    <mapping class="com.usermanagement.entity.User"/>
+    <mapping class="com.usermanagement.entity.Role"/>
+    <mapping class="com.usermanagement.entity.Permission"/>
+  </session-factory>
+</hibernate-configuration>
